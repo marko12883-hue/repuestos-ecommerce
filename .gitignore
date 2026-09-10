@@ -1,0 +1,19 @@
+# WordPress
+wp-config.php
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/backup*/
+wp-content/cache/
+*.log
+
+# Dependencias
+node_modules/
+vendor/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Entorno local
+.env
+docker-compose.override.yml
