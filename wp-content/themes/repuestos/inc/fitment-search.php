@@ -5,6 +5,9 @@
  * Muestra 3 desplegables (marca, modelo, año) y redirige a la tienda
  * buscando "Marca Modelo Año". Para una prueba rápida es suficiente;
  * más adelante se puede conectar con atributos de producto reales.
+ *
+ * Si el plugin "Repuestos Fitment" está activo, él registra la versión
+ * completa (con datos de la API vPIC) y esta versión básica no se usa.
  */
 
 if (!defined('ABSPATH')) exit;
@@ -76,4 +79,6 @@ function repuestos_buscador_vehiculo_shortcode() {
     <?php
     return ob_get_clean();
 }
-add_shortcode('buscador_vehiculo', 'repuestos_buscador_vehiculo_shortcode');
+if (!defined('REPUESTOS_FITMENT_VERSION')) {
+    add_shortcode('buscador_vehiculo', 'repuestos_buscador_vehiculo_shortcode');
+}

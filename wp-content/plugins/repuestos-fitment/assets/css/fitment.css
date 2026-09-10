@@ -1,0 +1,109 @@
+/* Repuestos Fitment — estilos base (el tema puede sobreescribirlos) */
+
+.repuestos-ymm {
+    background: #f7f7f7;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.repuestos-ymm h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+#repuestos-ymm-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: stretch;
+}
+
+#repuestos-ymm-form select {
+    flex: 1 1 140px;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #fff;
+}
+
+#repuestos-ymm-form button[type="submit"] {
+    padding: 0.65rem 1.4rem;
+    border: 0;
+    border-radius: 6px;
+    background: #d6362c;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#repuestos-ymm-form button[type="submit"]:hover {
+    background: #b32a21;
+}
+
+.repuestos-ymm-vin {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 0.9rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.repuestos-ymm-vin input {
+    width: 200px;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-family: monospace;
+}
+
+.repuestos-ymm-vin button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.repuestos-ymm-error {
+    color: #b32a21;
+    margin: 0.6rem 0 0;
+    font-size: 0.95rem;
+}
+
+/* Chip "mi vehículo" en el catálogo */
+.repuestos-ymm-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #1d2327;
+    color: #fff;
+    border-radius: 999px;
+    padding: 0.45rem 0.4rem 0.45rem 1rem;
+    margin: 0.8rem 0;
+    font-size: 0.95rem;
+}
+
+.repuestos-ymm-chip button {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    border: 0;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    line-height: 1;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Admin */
+.repuestos-fitment-table td select,
+.repuestos-fitment-table td input {
+    width: 100%;
+    max-width: 220px;
+}

@@ -12,7 +12,12 @@ El repo guarda el código del tema y la configuración; WordPress corre en tu ho
 │   ├── front-page.php             # Portada: hero + buscador por vehículo
 │   ├── header.php / footer.php
 │   ├── index.php
-│   └── inc/fitment-search.php     # Shortcode [buscador_vehiculo]
+│   └── inc/fitment-search.php     # Shortcode básico (si el plugin no está activo)
+├── wp-content/plugins/repuestos-fitment/  # Plugin: buscador Año→Marca→Modelo
+│   ├── repuestos-fitment.php      # Bootstrap del plugin
+│   ├── includes/                  # Cliente API vPIC, metabox, shortcode+AJAX
+│   └── assets/js+css              # Buscador, admin y estilos
+├── docs/API-VEHICULOS.md          # Cómo funciona la API de vehículos
 ├── datos/productos-ejemplo.csv    # 8 productos de ejemplo para importar
 ├── docker-compose.yml             # WordPress local para probar
 └── .github/workflows/deploy.yml   # Despliegue automático al hosting
@@ -28,9 +33,15 @@ con instalador de WordPress en 1 clic) e instala WordPress.
 En el escritorio de WordPress: **Plugins → Añadir nuevo → busca "WooCommerce" → Instalar y activar**.
 Sigue su asistente: moneda (USD), ubicación, impuestos y envíos.
 
-### 3. Sube el tema
+### 3. Sube el tema y el plugin de compatibilidad
 Comprime la carpeta `wp-content/themes/repuestos/` en un `.zip` y súbelo en
 **Apariencia → Temas → Añadir nuevo → Subir tema**. Actívalo.
+
+Haz lo mismo con `wp-content/plugins/repuestos-fitment/` en
+**Plugins → Añadir nuevo → Subir plugin** y actívalo. Este plugin conecta el
+buscador por vehículo con la API gratuita de NHTSA (marcas y modelos reales)
+y te permite asignar compatibilidad a cada producto. Detalles en
+`docs/API-VEHICULOS.md`.
 
 ### 4. Carga productos de ejemplo
 **Productos → Importar** y sube `datos/productos-ejemplo.csv`. Así ves la tienda
