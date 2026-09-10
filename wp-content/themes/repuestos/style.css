@@ -1,0 +1,98 @@
+/*
+Theme Name: Repuestos
+Theme URI: https://example.com/repuestos
+Author: Tu tienda
+Description: Tema ligero para tienda de repuestos de autos con WooCommerce. Incluye portada con buscador por vehículo.
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+Text Domain: repuestos
+*/
+
+:root {
+  --color-primario: #c81e1e;
+  --color-oscuro: #1a1a1a;
+  --color-gris: #f4f4f5;
+  --color-texto: #27272a;
+  --radio: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--color-texto);
+  line-height: 1.6;
+  background: #fff;
+}
+
+.contenedor { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Cabecera */
+.cabecera { background: var(--color-oscuro); color: #fff; }
+.cabecera .contenedor { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; }
+.logo a { color: #fff; text-decoration: none; font-size: 1.4rem; font-weight: 800; }
+.logo span { color: var(--color-primario); }
+.menu-principal ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 22px; }
+.menu-principal a { color: #fff; text-decoration: none; font-weight: 500; }
+.menu-principal a:hover { color: #fca5a5; }
+.barra-top { background: var(--color-primario); color: #fff; font-size: .85rem; text-align: center; padding: 6px 12px; }
+
+/* Hero */
+.hero { background: linear-gradient(120deg, #1a1a1a 60%, #3f3f46); color: #fff; padding: 70px 0; }
+.hero h1 { font-size: 2.4rem; margin: 0 0 10px; }
+.hero h1 span { color: var(--color-primario); }
+.hero p { color: #d4d4d8; max-width: 560px; }
+
+/* Buscador por vehículo */
+.buscador-vehiculo { background: #fff; border-radius: var(--radio); padding: 22px; margin-top: 26px; color: var(--color-texto); max-width: 760px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+.buscador-vehiculo h3 { margin: 0 0 14px; font-size: 1.05rem; }
+.buscador-vehiculo form { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 12px; }
+.buscador-vehiculo select, .buscador-vehiculo button { padding: 12px; border-radius: 8px; border: 1px solid #d4d4d8; font-size: 1rem; }
+.buscador-vehiculo button { background: var(--color-primario); color: #fff; border: none; cursor: pointer; font-weight: 700; }
+.buscador-vehiculo button:hover { background: #a31616; }
+
+/* Categorías */
+.seccion { padding: 56px 0; }
+.seccion h2 { font-size: 1.7rem; margin: 0 0 6px; }
+.seccion .sub { color: #71717a; margin: 0 0 26px; }
+.tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+.tarjeta { background: var(--color-gris); border-radius: var(--radio); padding: 26px 20px; text-decoration: none; color: var(--color-texto); transition: transform .15s; display: block; }
+.tarjeta:hover { transform: translateY(-3px); }
+.tarjeta .icono { font-size: 2rem; }
+.tarjeta h3 { margin: 10px 0 4px; font-size: 1.1rem; }
+.tarjeta p { margin: 0; color: #71717a; font-size: .9rem; }
+
+/* Productos WooCommerce */
+.woocommerce ul.products { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+.woocommerce ul.products li.product { background: #fff; border: 1px solid #e4e4e7; border-radius: var(--radio); padding: 16px; text-align: center; }
+.woocommerce ul.products li.product .price { color: var(--color-primario); font-weight: 700; font-size: 1.15rem; }
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button {
+  background: var(--color-primario); color: #fff; border-radius: 8px; font-weight: 700;
+}
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover { background: #a31616; color: #fff; }
+
+/* Beneficios */
+.beneficios { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+.beneficio { text-align: center; padding: 10px; }
+.beneficio .icono { font-size: 1.8rem; }
+.beneficio h4 { margin: 8px 0 4px; }
+.beneficio p { margin: 0; color: #71717a; font-size: .9rem; }
+
+/* Pie */
+.pie { background: var(--color-oscuro); color: #d4d4d8; padding: 40px 0 20px; margin-top: 40px; }
+.pie a { color: #d4d4d8; text-decoration: none; }
+.pie .contenedor { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
+.pie h4 { color: #fff; margin: 0 0 10px; }
+.copy { text-align: center; font-size: .85rem; color: #71717a; margin-top: 30px; }
+
+/* Contenido */
+.contenido { padding: 40px 0; }
+
+@media (max-width: 720px) {
+  .buscador-vehiculo form { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 1.8rem; }
+  .menu-principal ul { gap: 12px; font-size: .9rem; }
+}
