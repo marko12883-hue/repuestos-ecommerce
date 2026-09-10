@@ -1,0 +1,23 @@
+name: Deploy tema al hosting
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "wp-content/themes/repuestos/**"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Subir tema por SSH
+        uses: easingthemes/ssh-deploy@v5.1.0
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER }}
+          SOURCE: "wp-content/themes/repuestos/"
+          TARGET: ${{ secrets.DEPLOY_PATH }}/wp-content/themes/repuestos/
+          EXCLUDE: ".git/, .github/, node_modules/"
